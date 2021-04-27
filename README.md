@@ -5,6 +5,12 @@
 ## 진행 내용 정리
 - 일자 별 진행내용 정리
 
+## static
+  - Emotion
+  - GAN
+
+> 각각에 사용될 이미지
+
 ## template
 - .html
   - hello.html
