@@ -6,7 +6,10 @@
 </head>
 <body>
 <article id="406e3431-ca31-49e6-ad05-74fb852985d2" class="page sans">
-    <header><h1 class="page-title">기쁜 표정 사진 업로드하기</h1></header>
+    <header>
+        <h1 class="page-title">기쁜 표정 사진 업로드하기</h1>
+    </header>
+    
     <div class="page-body">
         <form method = "POST" enctype = "multipart/form-data" action = "{{ url_for('multi_upload_emotion') }}">
             <input type = "file" name = "file[]" multiple = "">
