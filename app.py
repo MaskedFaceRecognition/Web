@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 from keras.models import load_model
 import cv2
-from scipy import misc
-
+import tensorflow as tf
+import numpy as np
 
 app = Flask(__name__)
 
@@ -31,28 +31,46 @@ def multi_upload_gan():
     return redirect(url_for("hello"))
 
 
-@app.route("/emotion_classification", methods = ['POST'])
+@app.route("/emotion_prediction", methods = ['POST'])
 def emotion_prediction():
-    # 1. 업로드 이미지 reshape
-    # 2. 모델 불러와서 업로드 이미지 학습
-    # 3. 예측된 표정에 맞는 곳에 저장(GAN/happy, GAN/sad ..etc)
-    if request.method == 'POST':
-        file = request.files['static/Emotion/image1.jpg'] # 일단 파일 1개
-        if not file:
-            return render_template('index_html', label = 'No Files')
-    
-        img = misc.imread(file)
-        img = img[:, :, :3]
-        img = img.reshape(-1, 1)
+    # 1. 이미지 업로드
+    # 2. resize
+    # 3. 모델 불러와서 업로드한 이미지 학습
+    # 4. 예측된 표정에 맞는 곳에 저장(ex)"static/Emotion/angry/{}.jpg")
+    uploaded_files = request.files.getlist("file[]")
+    index_happy = 0
+    index_angry = 0
+    index_neutral = 0
+    for file in uploaded_files:
+        filestr = file.read()
+        #convert string data to numpy array
+        npimg = np.fromstring(filestr, np.uint8)
+        # convert numpy array to image
+        img = cv2.imdecode(npimg, cv2.IMREAD_GRAYSCALE)
 
-        prediction = model.predict(img)
+        img = cv2.resize(img, dsize = (48, 48))
+        img = img[..., np.newaxis]
+        img = img[..., None]
+        img = img.reshape(-1, 48, 48, 1)
+        img = tf.reshape(img, (-1, 48, 48, 1))
 
-        label = str(np.squeeze(prediction))
+        prediction = model.predict(img) # [happy, angry, neutral]가 [0.33, 0.1, 0.57] 이런 식으로 나옴.
 
-        if label == '10': label = '0'
+        # {'angry': 0, 'happy': 1, 'neutral': 2}
+        # Threshold를 0.5로 설정하였다. 3개 중 확률이 0.5가 넘는 해당 값이면 각각 폴더에 저장되는 걸로.
+        if prediction[0][0] >= 0.5:
+            file.save("static/Emotion/angry/{}.jpg".format(index_angry))
+            index_angry += 1
+        elif prediction[0][1] >= 0.5:
+            file.save("static/Emotion/happy/{}.jpg".format(index_happy))
+            index_happy += 1
+        elif prediction[0][2] >= 0.5:
+            file.save("static/Emotion/neutral/{}.jpg".format(index_neutral))
+            index_neutral += 1
+        
+        
 
-        return render_template('index_html', label = label)
-
+    return redirect(url_for("hello"))
 
 @app.route("/happy")
 def happy():
@@ -66,11 +84,16 @@ def angry():
 def neutral():
     return render_template("neutral.html")
 
+@app.route('/index')
+def emotion():
+    return render_template('index.html')
+
 @app.route("/restore")
 def restore():
     return render_template("restore.html")
 
-
 if __name__ == "__main__":
+    # face_detection = load_detection_model('models/haarcascade_frontalface_default.xml')
     model = load_model('models/model_best_0_2.h5') # model load
+    # app.run(host='0.0.0.0') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 URL은?
     app.run()
