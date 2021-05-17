@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from keras.models import load_model
+from keras.preprocessing.image import img_to_array
 import cv2
 import tensorflow as tf
 import numpy as np
@@ -43,18 +44,34 @@ def emotion_prediction():
     index_neutral = 0
     for file in uploaded_files:
         filestr = file.read()
+        
+        detection_model_path = 'models/haarcascade_frontalface_default.xml'
+        face_detection = cv2.CascadeClassifier(detection_model_path)
+
         #convert string data to numpy array
         npimg = np.fromstring(filestr, np.uint8)
         # convert numpy array to image
         img = cv2.imdecode(npimg, cv2.IMREAD_GRAYSCALE)
+        print(img.shape)
+        img = face_detection.detectMultiScale(img, scaleFactor=1.1,minNeighbors=5,minSize=(30,30),flags=cv2.CASCADE_SCALE_IMAGE)
+        print(img.shape)
+        img = sorted(img, reverse = True, key = lambda x: (x[2] - x[0]) * (x[3] - x[1]))
+        (fX, fY, fW, fH) = img
+        roi = img[fY:fY + fH, fX:fX + fW]
+        roi = cv2.resize(roi, (48, 48))
+        roi = roi.astype("float") / 255.0
+        roi = img_to_array(roi)
+        roi = np.expand_dims(roi, axis=0)
 
-        img = cv2.resize(img, dsize = (48, 48))
+        '''
+        img = cv2.resize(img, dsize = (48, 48)n)
         img = img[..., np.newaxis]
         img = img[..., None]
         img = img.reshape(-1, 48, 48, 1)
         img = tf.reshape(img, (-1, 48, 48, 1))
-
-        prediction = model.predict(img) # [happy, angry, neutral]가 [0.33, 0.1, 0.57] 이런 식으로 나옴.
+        '''
+        prediction = model.predict(roi) # [happy, angry, neutral]가 [0.33, 0.1, 0.57] 이런 식으로 나옴.
+        print(prediction)
 
         # {'angry': 0, 'happy': 1, 'neutral': 2}
         # Threshold를 0.5로 설정하였다. 3개 중 확률이 0.5가 넘는 해당 값이면 각각 폴더에 저장되는 걸로.
@@ -95,5 +112,7 @@ def restore():
 if __name__ == "__main__":
     # face_detection = load_detection_model('models/haarcascade_frontalface_default.xml')
     model = load_model('models/model_best_0_2.h5') # model load
-    # app.run(host='0.0.0.0') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 URL은?
-    app.run()
+    
+
+    app.run(host='192.168.35.17') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 URL은?
+    # app.run()
