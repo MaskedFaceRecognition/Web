@@ -4,6 +4,7 @@ from keras.preprocessing.image import img_to_array
 import cv2
 import tensorflow as tf
 import numpy as np
+# import module1
 
 app = Flask(__name__)
 
@@ -54,6 +55,10 @@ def emotion_prediction():
         saveFile = cv2.imdecode(npimg, cv2.IMREAD_COLOR)
         # print(type(frame)) # numpy.ndarray
         face = face_detection.detectMultiScale(frame, scaleFactor = 1.1, minNeighbors = 5, minSize=(30, 30), flags = cv2.CASCADE_SCALE_IMAGE)
+        
+        # print(face)
+        if len(face) == 0: # 얼굴 인식 안된 사진은 Train Set에 저장되지 않도록
+            continue
         face = sorted(face, reverse = True, key = lambda x: (x[2] - x[0]) * (x[3] - x[1]))[0]
         (fX, fY, fW, fH) = face 
         roi = frame[fY:fY + fH, fX:fX + fW]
@@ -104,5 +109,7 @@ if __name__ == "__main__":
     # face_detection = load_detection_model('models/haarcascade_frontalface_default.xml')
     model = load_model('models/model_best_0_2.h5') # model load
 
-    # app.run(host='0.0.0.0') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 URL은?
-    app.run(debug = True)
+    # app.run(host='0.0.0.0') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 U
+    # app.run(debug = True)
+    # app.run(host='0.0.0.0') # defalut port = 5000
+    
