@@ -1,0 +1,354 @@
+[Fri May 21 22:02:26.838132 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300] [2021-05-21 22:02:26,836] ERROR in app: Exception on /emotion_prediction [POST]
+[Fri May 21 22:02:26.838178 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300] Traceback (most recent call last):
+[Fri May 21 22:02:26.838183 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Fri May 21 22:02:26.838186 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     response = self.full_dispatch_request()
+[Fri May 21 22:02:26.838189 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Fri May 21 22:02:26.838191 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     rv = self.handle_user_exception(e)
+[Fri May 21 22:02:26.838194 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Fri May 21 22:02:26.838197 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     rv = self.dispatch_request()
+[Fri May 21 22:02:26.838201 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Fri May 21 22:02:26.838204 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 21 22:02:26.838208 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/home/copes/graduation-project/Web/app.py", line 45, in emotion_prediction
+[Fri May 21 22:02:26.838213 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     model = load_model('models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Fri May 21 22:02:26.838217 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Fri May 21 22:02:26.838220 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     return saved_model_load.load(filepath, compile, options)
+[Fri May 21 22:02:26.838223 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Fri May 21 22:02:26.838225 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Fri May 21 22:02:26.838228 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Fri May 21 22:02:26.838231 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300]     raise IOError(
+[Fri May 21 22:02:26.838233 2021] [wsgi:error] [pid 13399:tid 140719200409344] [remote ::1:34300] OSError: SavedModel file does not exist at: models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-21 22:02:18.400009: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-21 22:02:18.400029: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:19:20.997448 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302] [2021-05-23 18:19:20,994] ERROR in app: Exception on /emotion_prediction [POST]
+[Sun May 23 18:19:20.997507 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302] Traceback (most recent call last):
+[Sun May 23 18:19:20.997515 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 18:19:20.997521 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     response = self.full_dispatch_request()
+[Sun May 23 18:19:20.997527 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 18:19:20.997532 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     rv = self.handle_user_exception(e)
+[Sun May 23 18:19:20.997538 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 18:19:20.997543 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     rv = self.dispatch_request()
+[Sun May 23 18:19:20.997548 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 18:19:20.997553 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 18:19:20.997559 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/home/copes/graduation-project/Web/app.py", line 45, in emotion_prediction
+[Sun May 23 18:19:20.997565 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     model = load_model('models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:19:20.997640 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:19:20.997649 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:19:20.997656 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:19:20.997666 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:19:20.997673 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:19:20.997678 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302]     raise IOError(
+[Sun May 23 18:19:20.997682 2021] [wsgi:error] [pid 13534:tid 140047466874624] [remote ::1:34302] OSError: SavedModel file does not exist at: models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-23 18:19:12.270715: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:19:12.270736: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:24:25.146641 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304] mod_wsgi (pid=13666): Failed to exec Python script file '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:24:25.146728 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304] mod_wsgi (pid=13666): Exception occurred processing WSGI script '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:24:25.147338 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304] Traceback (most recent call last):
+[Sun May 23 18:24:25.147401 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]   File "/home/copes/graduation-project/Web/web.wsgi", line 5, in <module>
+[Sun May 23 18:24:25.147426 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]     from app import app as application
+[Sun May 23 18:24:25.147446 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]   File "/home/copes/graduation-project/Web/app.py", line 9, in <module>
+[Sun May 23 18:24:25.147468 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]     model = load_model('models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:24:25.147486 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:24:25.147490 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:24:25.147499 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:24:25.147502 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:24:25.147510 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:24:25.147513 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304]     raise IOError(
+[Sun May 23 18:24:25.147528 2021] [wsgi:error] [pid 13666:tid 140631312271104] [remote ::1:34304] OSError: SavedModel file does not exist at: models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-23 18:24:23.798141: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:24:23.798161: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:29:26.854564 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306] [2021-05-23 18:29:26,853] ERROR in app: Exception on /emotion_prediction [POST]
+[Sun May 23 18:29:26.854624 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306] Traceback (most recent call last):
+[Sun May 23 18:29:26.854631 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 18:29:26.854635 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]     response = self.full_dispatch_request()
+[Sun May 23 18:29:26.854638 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 18:29:26.854642 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]     rv = self.handle_user_exception(e)
+[Sun May 23 18:29:26.854645 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 18:29:26.854648 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]     rv = self.dispatch_request()
+[Sun May 23 18:29:26.854651 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 18:29:26.854660 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 18:29:26.854663 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]   File "/home/copes/graduation-project/Web/app.py", line 58, in emotion_prediction
+[Sun May 23 18:29:26.854666 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306]     face = face_detection.detectMultiScale(frame, scaleFactor = 1.1, minNeighbors = 5, minSize=(30, 30), flags = cv2.CASCADE_SCALE_IMAGE)
+[Sun May 23 18:29:26.854669 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306] cv2.error: OpenCV(4.5.2) /tmp/pip-req-build-eirhwqtr/opencv/modules/objdetect/src/cascadedetect.cpp:1689: error: (-215:Assertion failed) !empty() in function 'detectMultiScale'
+[Sun May 23 18:29:26.854672 2021] [wsgi:error] [pid 13803:tid 139883498247936] [remote ::1:34306] 
+2021-05-23 18:29:25.024033: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:29:25.024054: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-05-23 18:29:26.475340: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-05-23 18:29:26.475357: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-05-23 18:29:26.475370: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (DESKTOP-MNQ7F8E): /proc/driver/nvidia/version does not exist
+2021-05-23 18:29:26.475590: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[Sun May 23 18:31:45.105937 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308] mod_wsgi (pid=13951): Failed to exec Python script file '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:31:45.106019 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308] mod_wsgi (pid=13951): Exception occurred processing WSGI script '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:31:45.106598 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308] Traceback (most recent call last):
+[Sun May 23 18:31:45.106664 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]   File "/home/copes/graduation-project/Web/web.wsgi", line 5, in <module>
+[Sun May 23 18:31:45.106690 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]     from app import app as application
+[Sun May 23 18:31:45.106709 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]   File "/home/copes/graduation-project/Web/app.py", line 9, in <module>
+[Sun May 23 18:31:45.106714 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]     model = load_model('./models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:31:45.106723 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:31:45.106727 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:31:45.106749 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:31:45.106760 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:31:45.106782 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:31:45.106790 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308]     raise IOError(
+[Sun May 23 18:31:45.106823 2021] [wsgi:error] [pid 13951:tid 139981315217152] [remote ::1:34308] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-23 18:31:43.896493: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:31:43.896512: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:35:07.491139 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310] mod_wsgi (pid=14082): Failed to exec Python script file '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:35:07.491219 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310] mod_wsgi (pid=14082): Exception occurred processing WSGI script '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:35:07.491826 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310] Traceback (most recent call last):
+[Sun May 23 18:35:07.491893 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]   File "/home/copes/graduation-project/Web/web.wsgi", line 5, in <module>
+[Sun May 23 18:35:07.491905 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]     from app import app as application
+[Sun May 23 18:35:07.491929 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]   File "/home/copes/graduation-project/Web/app.py", line 9, in <module>
+[Sun May 23 18:35:07.491937 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]     model = load_model('./models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:35:07.491955 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:35:07.491962 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:35:07.491977 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:35:07.492008 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:35:07.492033 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:35:07.492039 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310]     raise IOError(
+[Sun May 23 18:35:07.492063 2021] [wsgi:error] [pid 14082:tid 140575974057728] [remote ::1:34310] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+[Sun May 23 18:35:17.526315 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312] mod_wsgi (pid=14082): Failed to exec Python script file '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:35:17.526411 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312] mod_wsgi (pid=14082): Exception occurred processing WSGI script '/home/copes/graduation-project/Web/web.wsgi'.
+[Sun May 23 18:35:17.526699 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312] Traceback (most recent call last):
+[Sun May 23 18:35:17.526866 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]   File "/home/copes/graduation-project/Web/web.wsgi", line 5, in <module>
+[Sun May 23 18:35:17.526882 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]     from app import app as application
+[Sun May 23 18:35:17.526905 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]   File "/home/copes/graduation-project/Web/app.py", line 9, in <module>
+[Sun May 23 18:35:17.526914 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]     model = load_model('./models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:35:17.526933 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:35:17.526940 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:35:17.526956 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:35:17.526963 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:35:17.526979 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:35:17.526987 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312]     raise IOError(
+[Sun May 23 18:35:17.527033 2021] [wsgi:error] [pid 14082:tid 140575940486912] [remote ::1:34312] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-23 18:35:06.292151: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:35:06.292181: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:36:13.407455 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316] [2021-05-23 18:36:13,406] ERROR in app: Exception on /emotion_prediction [POST]
+[Sun May 23 18:36:13.407486 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316] Traceback (most recent call last):
+[Sun May 23 18:36:13.407490 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 18:36:13.407494 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     response = self.full_dispatch_request()
+[Sun May 23 18:36:13.407497 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 18:36:13.407500 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     rv = self.handle_user_exception(e)
+[Sun May 23 18:36:13.407511 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 18:36:13.407514 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     rv = self.dispatch_request()
+[Sun May 23 18:36:13.407516 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 18:36:13.407519 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 18:36:13.407522 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/home/copes/graduation-project/Web/app.py", line 46, in emotion_prediction
+[Sun May 23 18:36:13.407525 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     model = load_model('./models/model_best_0_2.h5') # model load linux \xec\x97\x90\xec\x84\x9c\xeb\x8a\x94 \xeb\xb0\x91\xec\x97\x90\xec\x84\x9c\xed\x95\x98\xeb\x8a\x94 \xea\xb2\x83\xeb\xa7\x8c\xec\x9c\xbc\xeb\xa1\x9c\xeb\x8a\x94 \xec\x97\x90\xeb\x9f\xac\xea\xb0\x80 \xeb\xb0\x9c\xec\x83\x9d\xed\x95\x98\xec\x97\xac \xeb\x84\xa3\xec\x9d\x8c.
+[Sun May 23 18:36:13.407528 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:36:13.407531 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:36:13.407533 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:36:13.407536 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:36:13.407539 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:36:13.407542 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316]     raise IOError(
+[Sun May 23 18:36:13.407544 2021] [wsgi:error] [pid 14213:tid 140088985368320] [remote ::1:34316] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+2021-05-23 18:36:04.902195: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:36:04.902215: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 18:37:46.271426 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318] [2021-05-23 18:37:46,270] ERROR in app: Exception on /emotion_prediction [POST]
+[Sun May 23 18:37:46.271482 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318] Traceback (most recent call last):
+[Sun May 23 18:37:46.271490 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 18:37:46.271494 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     response = self.full_dispatch_request()
+[Sun May 23 18:37:46.271497 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 18:37:46.271501 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     rv = self.handle_user_exception(e)
+[Sun May 23 18:37:46.271504 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 18:37:46.271513 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     rv = self.dispatch_request()
+[Sun May 23 18:37:46.271516 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 18:37:46.271519 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 18:37:46.271522 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/home/copes/graduation-project/Web/app.py", line 46, in emotion_prediction
+[Sun May 23 18:37:46.271524 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     model = load_model('./models/model_best_0_2.h5')
+[Sun May 23 18:37:46.271527 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 18:37:46.271530 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 18:37:46.271532 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 18:37:46.271535 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 18:37:46.271538 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 18:37:46.271542 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318]     raise IOError(
+[Sun May 23 18:37:46.271544 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34318] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+[Sun May 23 19:10:17.351038 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320] [2021-05-23 19:10:17,349] ERROR in app: Exception on /multi_upload_gan [POST]
+[Sun May 23 19:10:17.351146 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320] Traceback (most recent call last):
+[Sun May 23 19:10:17.351154 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 19:10:17.351158 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     response = self.full_dispatch_request()
+[Sun May 23 19:10:17.351162 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 19:10:17.351165 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     rv = self.handle_user_exception(e)
+[Sun May 23 19:10:17.351169 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 19:10:17.351172 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     rv = self.dispatch_request()
+[Sun May 23 19:10:17.351175 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 19:10:17.351178 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 19:10:17.351182 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/home/copes/graduation-project/Web/app.py", line 32, in multi_upload_gan
+[Sun May 23 19:10:17.351185 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     file.save("./static/GAN/{}.jpg".format(IDX))
+[Sun May 23 19:10:17.351195 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]   File "/usr/local/lib/python3.8/dist-packages/werkzeug/datastructures.py", line 3013, in save
+[Sun May 23 19:10:17.351198 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320]     dst = open(dst, "wb")
+[Sun May 23 19:10:17.351200 2021] [wsgi:error] [pid 14346:tid 140618600625920] [remote ::1:34320] FileNotFoundError: [Errno 2] No such file or directory: './static/GAN/0.jpg'
+2021-05-23 18:37:44.918123: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 18:37:44.918143: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 19:26:10.599014 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338] [2021-05-23 19:26:10,597] ERROR in app: Exception on /emotion_prediction [POST]
+[Sun May 23 19:26:10.599077 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338] Traceback (most recent call last):
+[Sun May 23 19:26:10.599085 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 19:26:10.599090 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     response = self.full_dispatch_request()
+[Sun May 23 19:26:10.599093 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 19:26:10.599097 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     rv = self.handle_user_exception(e)
+[Sun May 23 19:26:10.599100 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 19:26:10.599104 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     rv = self.dispatch_request()
+[Sun May 23 19:26:10.599107 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 19:26:10.599111 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 19:26:10.599114 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/home/copes/graduation-project/Web/app.py", line 46, in emotion_prediction
+[Sun May 23 19:26:10.599118 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     model = load_model('./models/model_best_0_2.h5')
+[Sun May 23 19:26:10.599121 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/save.py", line 206, in load_model
+[Sun May 23 19:26:10.599125 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     return saved_model_load.load(filepath, compile, options)
+[Sun May 23 19:26:10.599128 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/keras/saving/saved_model/load.py", line 109, in load
+[Sun May 23 19:26:10.599132 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     meta_graph_def = loader_impl.parse_saved_model(path).meta_graphs[0]
+[Sun May 23 19:26:10.599136 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]   File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/saved_model/loader_impl.py", line 113, in parse_saved_model
+[Sun May 23 19:26:10.599140 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338]     raise IOError(
+[Sun May 23 19:26:10.599144 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34338] OSError: SavedModel file does not exist at: ./models/model_best_0_2.h5/{saved_model.pbtxt|saved_model.pb}
+[Sun May 23 19:28:17.494721 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340] [2021-05-23 19:28:17,493] ERROR in app: Exception on /multi_upload_gan [POST]
+[Sun May 23 19:28:17.494783 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340] Traceback (most recent call last):
+[Sun May 23 19:28:17.494792 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 2051, in wsgi_app
+[Sun May 23 19:28:17.494796 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     response = self.full_dispatch_request()
+[Sun May 23 19:28:17.494800 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1501, in full_dispatch_request
+[Sun May 23 19:28:17.494803 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     rv = self.handle_user_exception(e)
+[Sun May 23 19:28:17.494807 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1499, in full_dispatch_request
+[Sun May 23 19:28:17.494811 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     rv = self.dispatch_request()
+[Sun May 23 19:28:17.494814 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/usr/local/lib/python3.8/dist-packages/flask/app.py", line 1485, in dispatch_request
+[Sun May 23 19:28:17.494818 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Sun May 23 19:28:17.494821 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/home/copes/graduation-project/Web/app.py", line 32, in multi_upload_gan
+[Sun May 23 19:28:17.494825 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     file.save("./static/GAN/{}.jpg".format(IDX))
+[Sun May 23 19:28:17.494828 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]   File "/usr/local/lib/python3.8/dist-packages/werkzeug/datastructures.py", line 3013, in save
+[Sun May 23 19:28:17.494831 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340]     dst = open(dst, "wb")
+[Sun May 23 19:28:17.494835 2021] [wsgi:error] [pid 14576:tid 140207166797568] [remote ::1:34340] FileNotFoundError: [Errno 2] No such file or directory: './static/GAN/0.jpg'
+2021-05-23 19:25:59.924681: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 19:25:59.924704: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+[Sun May 23 20:43:52.791575 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34342] [[9.6297739e-03 9.1982674e-04 9.8945040e-01]]
+2021-05-23 20:43:36.724602: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 20:43:36.724622: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-05-23 20:43:43.005623: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-05-23 20:43:43.005648: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-05-23 20:43:43.005670: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (DESKTOP-MNQ7F8E): /proc/driver/nvidia/version does not exist
+2021-05-23 20:43:43.005934: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-05-23 20:43:43.719663: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-05-23 20:43:43.720319: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 1991995000 Hz
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/0.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:26.982657 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[9.6297739e-03 9.1982674e-04 9.8945040e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/0.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.038017 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.02050695 0.06258767 0.9169054 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/1.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.101146 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.1561424  0.00467606 0.83918154]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/2.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.171380 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.00845459 0.00888204 0.9826634 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/3.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.237910 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[4.597729e-02 3.666400e-04 9.536561e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/4.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.312619 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.02591931 0.00367296 0.9704077 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/5.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.382631 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.00273046 0.0191434  0.9781261 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/6.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.481957 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.19477195 0.00555172 0.79967636]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/7.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.558978 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.0181159  0.00715475 0.9747293 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/8.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.631815 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.00215236 0.14575163 0.85209596]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/9.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.704322 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.01975805 0.00176907 0.9784728 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/10.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.772597 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[1.5929326e-01 6.4941193e-04 8.4005737e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/11.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.840372 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.10447256 0.00173842 0.89378893]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/12.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.902733 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[1.9839752e-02 3.9648614e-04 9.7976375e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/13.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:27.970202 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[4.0209842e-01 5.7689834e-04 5.9732479e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/14.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.042484 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.02074791 0.01212754 0.9671245 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/15.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.114860 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.00525339 0.02359281 0.9711538 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/16.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.179743 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.0428966  0.03135791 0.9257454 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/17.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.249561 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[0.3347329  0.10236973 0.56289744]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/18.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.393594 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[1.2683483e-02 2.6598462e-04 9.8705053e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/19.jpg'): can't open file for writing: permission denied
+[Sun May 23 20:44:28.464677 2021] [wsgi:error] [pid 14834:tid 139945060435712] [remote ::1:34346] [[9.351187e-03 5.857703e-04 9.900630e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/20.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.200322 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.02050695 0.06258767 0.9169054 ]]
+2021-05-23 21:30:09.039680: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-05-23 21:30:09.039700: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2021-05-23 21:30:28.338541: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-05-23 21:30:28.338557: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-05-23 21:30:28.338570: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (DESKTOP-MNQ7F8E): /proc/driver/nvidia/version does not exist
+2021-05-23 21:30:28.338743: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-05-23 21:30:28.893223: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-05-23 21:30:28.893552: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 1991995000 Hz
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/0.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.270037 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.1561424  0.00467606 0.83918154]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/1.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.348022 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.00845459 0.00888204 0.9826634 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/2.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.418706 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[4.597729e-02 3.666400e-04 9.536561e-01]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/3.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.496640 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.02591931 0.00367296 0.9704077 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/4.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.569952 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.00273046 0.0191434  0.9781261 ]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/5.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.669621 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.05130138 0.00247891 0.94621974]]
+[ WARN:0] global /tmp/pip-req-build-eirhwqtr/opencv/modules/imgcodecs/src/loadsave.cpp (693) imwrite_ imwrite_('home/copes/graduation-project/Web/static/Emotion/neutral/6.jpg'): can't open file for writing: permission denied
+[Sun May 23 21:30:37.744134 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.0045835  0.00117963 0.9942368 ]]
+[Sun May 23 21:30:37.819835 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[4.8797271e-01 3.9616763e-04 5.1163113e-01]]
+[Sun May 23 21:30:37.892291 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[6.1493507e-03 6.6049478e-04 9.9319011e-01]]
+[Sun May 23 21:30:37.961609 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[7.2099008e-02 2.0876895e-04 9.2769223e-01]]
+[Sun May 23 21:30:38.030686 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.0311581  0.01410805 0.9547339 ]]
+[Sun May 23 21:30:38.091376 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[4.3041032e-02 1.7129301e-04 9.5678765e-01]]
+[Sun May 23 21:30:38.188581 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.19477195 0.00555172 0.79967636]]
+[Sun May 23 21:30:38.259303 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.0181159  0.00715475 0.9747293 ]]
+[Sun May 23 21:30:38.335445 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.00215236 0.14575163 0.85209596]]
+[Sun May 23 21:30:38.407944 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.01975805 0.00176907 0.9784728 ]]
+[Sun May 23 21:30:38.476766 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[1.5929326e-01 6.4941193e-04 8.4005737e-01]]
+[Sun May 23 21:30:38.544911 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34350] [[0.10447256 0.00173842 0.89378893]]
+[Sun May 23 21:33:15.302943 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[9.6297739e-03 9.1982674e-04 9.8945040e-01]]
+[Sun May 23 21:33:15.364904 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.02050695 0.06258767 0.9169054 ]]
+[Sun May 23 21:33:15.460948 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.1561424  0.00467606 0.83918154]]
+[Sun May 23 21:33:15.557282 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00845459 0.00888204 0.9826634 ]]
+[Sun May 23 21:33:15.631366 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[4.597729e-02 3.666400e-04 9.536561e-01]]
+[Sun May 23 21:33:15.708011 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.02591931 0.00367296 0.9704077 ]]
+[Sun May 23 21:33:15.775422 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00273046 0.0191434  0.9781261 ]]
+[Sun May 23 21:33:15.878816 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.05130138 0.00247891 0.94621974]]
+[Sun May 23 21:33:15.947953 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.0045835  0.00117963 0.9942368 ]]
+[Sun May 23 21:33:16.019957 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[4.8797271e-01 3.9616763e-04 5.1163113e-01]]
+[Sun May 23 21:33:16.094489 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[6.1493507e-03 6.6049478e-04 9.9319011e-01]]
+[Sun May 23 21:33:16.160987 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[7.2099008e-02 2.0876895e-04 9.2769223e-01]]
+[Sun May 23 21:33:16.231174 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.0311581  0.01410805 0.9547339 ]]
+[Sun May 23 21:33:16.294991 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[4.3041032e-02 1.7129301e-04 9.5678765e-01]]
+[Sun May 23 21:33:16.392710 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.19477195 0.00555172 0.79967636]]
+[Sun May 23 21:33:16.467923 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.0181159  0.00715475 0.9747293 ]]
+[Sun May 23 21:33:16.542780 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00215236 0.14575163 0.85209596]]
+[Sun May 23 21:33:16.617810 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.01975805 0.00176907 0.9784728 ]]
+[Sun May 23 21:33:16.692491 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.5929326e-01 6.4941193e-04 8.4005737e-01]]
+[Sun May 23 21:33:16.762635 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.10447256 0.00173842 0.89378893]]
+[Sun May 23 21:33:16.826352 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.9839752e-02 3.9648614e-04 9.7976375e-01]]
+[Sun May 23 21:33:16.892353 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[4.0209842e-01 5.7689834e-04 5.9732479e-01]]
+[Sun May 23 21:33:16.962923 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.1287375  0.0066506  0.86461186]]
+[Sun May 23 21:33:17.034659 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.8442921e-02 3.1668242e-05 9.8152542e-01]]
+[Sun May 23 21:33:17.110199 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.11244605 0.03096933 0.85658467]]
+[Sun May 23 21:33:17.184234 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.31806996 0.00182547 0.68010455]]
+[Sun May 23 21:33:17.260154 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.0387175e-01 6.4992596e-04 8.9547831e-01]]
+[Sun May 23 21:33:17.326888 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.4036876e-01 2.9067480e-04 8.5934049e-01]]
+[Sun May 23 21:33:17.395432 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.03275191 0.08921272 0.8780354 ]]
+[Sun May 23 21:33:17.459314 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.11591227 0.00254197 0.8815458 ]]
+[Sun May 23 21:33:17.534851 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.13894767 0.2243983  0.6366541 ]]
+[Sun May 23 21:33:17.624820 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00771133 0.00438042 0.9879083 ]]
+[Sun May 23 21:33:17.711536 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[5.4134727e-02 1.4948583e-04 9.4571579e-01]]
+[Sun May 23 21:33:17.783542 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00515046 0.137072   0.85777754]]
+[Sun May 23 21:33:17.864708 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.02074791 0.01212754 0.9671245 ]]
+[Sun May 23 21:33:17.931998 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.00525339 0.02359281 0.9711538 ]]
+[Sun May 23 21:33:17.997901 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.0428966  0.03135791 0.9257454 ]]
+[Sun May 23 21:33:18.065043 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.3347329  0.10236973 0.56289744]]
+[Sun May 23 21:33:18.210515 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.2683483e-02 2.6598462e-04 9.8705053e-01]]
+[Sun May 23 21:33:18.277643 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[9.351187e-03 5.857703e-04 9.900630e-01]]
+[Sun May 23 21:33:18.344799 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[2.0315698e-01 5.8732134e-05 7.9678428e-01]]
+[Sun May 23 21:33:18.412658 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[1.3129169e-01 3.9674775e-04 8.6831158e-01]]
+[Sun May 23 21:33:18.492418 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.01497851 0.0282674  0.956754  ]]
+[Sun May 23 21:33:18.571990 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.01563484 0.00168601 0.9826791 ]]
+[Sun May 23 21:33:18.675171 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.0962153  0.00161867 0.90216607]]
+[Sun May 23 21:33:18.740266 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.113419   0.00143218 0.8851489 ]]
+[Sun May 23 21:33:18.806527 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[4.0270045e-01 3.2915789e-04 5.9697032e-01]]
+[Sun May 23 21:33:18.875976 2021] [wsgi:error] [pid 15105:tid 140271737095936] [remote ::1:34354] [[0.01356036 0.00146619 0.98497343]]

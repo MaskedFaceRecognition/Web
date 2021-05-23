@@ -6,6 +6,7 @@ import tensorflow as tf
 import numpy as np
 # import module1
 
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -18,7 +19,7 @@ def multi_upload_emotion():
     uploaded_files = request.files.getlist("file[]")
     IDX = 0
     for file in uploaded_files:
-        file.save("static/Emotion/{}.jpg".format(IDX))
+        file.save("home/copes/graduation-project/Web/static/Emotion/{}.jpg".format(IDX))
         IDX += 1
     return redirect(url_for("hello"))
 
@@ -28,7 +29,7 @@ def multi_upload_gan():
     uploaded_files = request.files.getlist("file[]")
     IDX = 0
     for file in uploaded_files:
-        file.save("static/GAN/{}.jpg".format(IDX))
+        file.save("home/copes/graduation-project/Web/static/GAN/{}.jpg".format(IDX))
         IDX += 1
     return redirect(url_for("hello"))
 
@@ -42,10 +43,11 @@ def emotion_prediction():
     index_happy = 0
     index_angry = 0
     index_neutral = 0
+    model = load_model('home/copes/graduation-project/Web/models/model_best_0_2.h5')
     for file in uploaded_files:
         filestr = file.read() # byte 단위이기 때문에 바로 file.save로 저장해서 .jpg로 보이지 않는다.
         
-        detection_model_path = 'models/haarcascade_frontalface_default.xml'
+        detection_model_path = 'home/copes/graduation-project/Web/models/haarcascade_frontalface_default.xml'
         face_detection = cv2.CascadeClassifier(detection_model_path)
 
         #convert string data to numpy array
@@ -74,13 +76,13 @@ def emotion_prediction():
         # {'angry': 0, 'happy': 1, 'neutral': 2}
         # Threshold를 0.5로 설정. 확률 0.5가 넘는 표정이 있으면 해당 폴더에 저장.
         if prediction[0][0] >= 0.5:
-            cv2.imwrite("static/Emotion/angry/{}.jpg".format(index_angry), saveFile) # numpy.ndarray
+            cv2.imwrite("home/copes/graduation-project/Web/static/Emotion/angry/{}.jpg".format(index_angry), saveFile) # numpy.ndarray
             index_angry += 1
         elif prediction[0][1] >= 0.5:
-            cv2.imwrite("static/Emotion/happy/{}.jpg".format(index_happy), saveFile)
+            cv2.imwrite("home/copes/graduation-project/Web/static/Emotion/happy/{}.jpg".format(index_happy), saveFile)
             index_happy += 1
         elif prediction[0][2] >= 0.5:
-            cv2.imwrite("static/Emotion/neutral/{}.jpg".format(index_neutral), saveFile)
+            cv2.imwrite("home/copes/graduation-project/Web/static/Emotion/neutral/{}.jpg".format(index_neutral), saveFile)
             index_neutral += 1
         
     return redirect(url_for("hello"))
@@ -104,12 +106,12 @@ def emotion():
 @app.route("/restore")
 def restore():
     return render_template("restore.html")
-
+'''
 if __name__ == "__main__":
     # face_detection = load_detection_model('models/haarcascade_frontalface_default.xml')
     model = load_model('models/model_best_0_2.h5') # model load
-
     # app.run(host='0.0.0.0') # 외부에서 접근가능한 서버로 만들어준다, 외부에서 접근가능하도록 하는 U
     # app.run(debug = True)
-    # app.run(host='0.0.0.0') # defalut port = 5000
+    # app.run() # defalut port = 5000
+'''
     
