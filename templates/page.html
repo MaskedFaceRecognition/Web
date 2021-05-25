@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
     <title>Carousel Template · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
@@ -10,7 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="home/copes/graduation-project/Web/templates/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -30,7 +33,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="home/copes/graduation-project/Web/templates/assets/dist/css/carousel.css" rel="stylesheet">
   </head>
   <body>
     
@@ -83,7 +86,7 @@
             <h1>마스크 없애기</h1>
             <p><사용절차></br>
                 1. 얼굴이 나온 여러장의 사진들을 업로드</br>
-                2. 복원하기를 원하는 표정을 선택 (300장 이상의 사진이 있는 경우 선택가능)</br>
+                2. 복원하기를 원하는 표정을 선택 (300장 이상의 사진이 있는 경우 선택 가능)</br>
                 3. 복원하기를 원하는 마스크를 착용한 사진 업로드</br>
                 4. 복원 가능한 준비가 된 표정 중 원하는 표정을 눌러 복원 실행</br>
                 5. 복원 완료
@@ -129,10 +132,11 @@
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
+    <script src = "fileNum.js"> // load error </script> <!-- 학습시킬 수 있는 사진 -->d
 
   <div class="container marketing" style="text-align: center;">
     
-    <p><a class="btn btn-secondary" href="#">사진 업로드 하기</a></p>
+    <p><a class="btn btn-secondary" onclick="location.href = '/upload_nonmasked'">사진 업로드 하기</a></p>
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
@@ -168,7 +172,7 @@
 
 
 
-    <p><a class="btn btn-secondary" href="#">마스크 쓴 사진 업로드하기</a></p>
+    <p><a class="btn btn-secondary" onclick="location.href = '/upload_masked'">마스크 쓴 사진 업로드 하기</a></p>
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
@@ -263,7 +267,7 @@
 </main>
 
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="home/copes/graduation-project/Web/templates/assets/dist/js/bootstrap.bundle.min.js"></script>
 
       
   </body>
