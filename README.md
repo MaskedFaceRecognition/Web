@@ -22,6 +22,8 @@
 ## app.py 
 - Flask 구현 코드
 
+![image](https://user-images.githubusercontent.com/43158502/120206872-affd5500-c266-11eb-8ee4-49931b47de97.png)
+![image](https://user-images.githubusercontent.com/43158502/120206842-a83db080-c266-11eb-89ad-33e1d2bec01a.png)
 
 
 
