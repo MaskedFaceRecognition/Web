@@ -14,7 +14,7 @@
 - templates에는 home 화면인 hello2.html, 마스크를 쓰지 않은 사진 업로드 화면인 upload_nonmasked.html, 마스크를 쓴 사진 업로드 화면인 upload_masked.html과 css, js파일로 구성되어 있다.
 ![image](https://user-images.githubusercontent.com/43158502/120748677-25ef0e00-c53e-11eb-9f7f-397dadde019a.png)
 
-## 진행 내용 정리
+## 진행 내용 정리[https://github.com/MaskedFaceRecognition/Web/tree/main/%EC%A7%84%ED%96%89%20%EB%82%B4%EC%9A%A9%20%EC%A0%95%EB%A6%AC]
 - 일자 별 진행내용 정리
 
 
